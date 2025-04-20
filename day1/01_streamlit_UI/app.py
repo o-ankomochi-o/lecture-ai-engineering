@@ -1,7 +1,8 @@
-import streamlit as st
-import pandas as pd
-import numpy as np
 import time
+
+import numpy as np
+import pandas as pd
+import streamlit as st
 
 # ============================================
 # ページ設定
@@ -17,13 +18,17 @@ import time
 # ============================================
 st.title("Streamlit 初心者向けデモ")
 st.markdown("### コメントを解除しながらStreamlitの機能を学びましょう")
-st.markdown("このデモコードでは、コメントアウトされた部分を順番に解除しながらUIの変化を確認できます。")
+st.markdown(
+    "このデモコードでは、コメントアウトされた部分を順番に解除しながらUIの変化を確認できます。"
+)
 
 # ============================================
-# サイドバー 
+# サイドバー
 # ============================================
 st.sidebar.header("デモのガイド")
-st.sidebar.info("コードのコメントを解除して、Streamlitのさまざまな機能を確認しましょう。")
+st.sidebar.info(
+    "コードのコメントを解除して、Streamlitのさまざまな機能を確認しましょう。"
+)
 
 # ============================================
 # 基本的なUI要素
@@ -36,9 +41,9 @@ name = st.text_input("あなたの名前", "ゲスト")
 st.write(f"こんにちは、{name}さん！")
 
 # ボタン
-# st.subheader("ボタン")
-# if st.button("クリックしてください"):
-#     st.success("ボタンがクリックされました！")
+st.subheader("ボタン")
+if st.button("クリックしてください"):
+    st.success("ボタンがクリックされました！")
 
 # チェックボックス
 # st.subheader("チェックボックス")
@@ -155,7 +160,7 @@ st.write(f"こんにちは、{name}さん！")
 #     # ファイルのデータを表示
 #     bytes_data = uploaded_file.getvalue()
 #     st.write(f"ファイルサイズ: {len(bytes_data)} bytes")
-#     
+#
 #     # CSVの場合はデータフレームとして読み込む
 #     if uploaded_file.name.endswith('.csv'):
 #         df = pd.read_csv(uploaded_file)
@@ -177,7 +182,7 @@ st.write(f"こんにちは、{name}さん！")
 # }
 # </style>
 # """, unsafe_allow_html=True)
-# 
+#
 # st.markdown('<p class="big-font">これはカスタムCSSでスタイリングされたテキストです！</p>', unsafe_allow_html=True)
 
 # ============================================
@@ -185,14 +190,17 @@ st.write(f"こんにちは、{name}さん！")
 # ============================================
 st.divider()
 st.subheader("このデモの使い方")
-st.markdown("""
+st.markdown(
+    """
 1. コードエディタでコメントアウトされた部分を見つけます（#で始まる行）
 2. 確認したい機能のコメントを解除します（先頭の#を削除）
 3. 変更を保存して、ブラウザで結果を確認します
 4. 様々な組み合わせを試して、UIがどのように変化するか確認しましょう
-""")
+"""
+)
 
-st.code("""
+st.code(
+    """
 # コメントアウトされた例:
 # if st.button("クリックしてください"):
 #     st.success("ボタンがクリックされました！")
@@ -200,4 +208,5 @@ st.code("""
 # コメントを解除した例:
 if st.button("クリックしてください"):
     st.success("ボタンがクリックされました！")
-""")
+"""
+)
